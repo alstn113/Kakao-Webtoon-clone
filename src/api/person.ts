@@ -13,3 +13,12 @@ export async function getPersonById(id: string | string[] | undefined): Promise<
   }
   throw new Error("invalidd id");
 }
+
+export async function createPerson(id: string, name: string, age: number): Promise<IPerson> {
+  const { data } = await client.post("/api/person/create", {
+    id,
+    name,
+    age,
+  });
+  return data;
+}

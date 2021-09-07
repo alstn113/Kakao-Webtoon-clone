@@ -8,6 +8,8 @@ import { GlobalStyle } from "@/styles/global-style";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@/styles/theme";
 
+import Header from "@/components/Header";
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
     () =>
@@ -15,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         defaultOptions: {
           queries: {
             refetchOnWindowFocus: false,
+            staleTime: 10 * 1000,
           },
         },
       })
@@ -26,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ReactQueryDevtools initialIsOpen={false} />
         <ThemeProvider theme={theme}>
           <GlobalStyle />
+          <Header />
           <Component {...pageProps} />
         </ThemeProvider>
       </Hydrate>

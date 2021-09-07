@@ -7,6 +7,7 @@ import { Hydrate } from "react-query/hydration";
 import { GlobalStyle } from "@/styles/global-style";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@/styles/theme";
+import { RecoilRoot } from "recoil";
 
 import Header from "@/components/Header";
 
@@ -23,17 +24,18 @@ function MyApp({ Component, pageProps }: AppProps) {
       })
   );
   return (
-    // recoil 있으면 제일 밖에 설정
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <Header />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </Hydrate>
-    </QueryClientProvider>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <Header />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </Hydrate>
+      </QueryClientProvider>
+    </RecoilRoot>
   );
 }
 export default MyApp;

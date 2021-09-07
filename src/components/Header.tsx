@@ -29,6 +29,11 @@ function HeaderComponent() {
             <a>Page /person/ssr</a>
           </Link>
         </li>
+        <li>
+          <Link href="/counter">
+            <a>Page /counter</a>
+          </Link>
+        </li>
       </ul>
     </header>
   );

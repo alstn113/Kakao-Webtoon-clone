@@ -1,26 +1,26 @@
 import { createGlobalStyle } from "styled-components";
-import { normalize } from "styled-normalize";
+import { reset } from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
-  ${normalize}
+  ${reset}
   html{
-  box-sizing: border-box;
-  background: #F5F4F0;
-  display:block;
-  height: 100%;
-  max-width: 640px;
-  margin:0 auto;
-  padding: 0;
-  a {
-      text-decoration: none;
-    }
-}
+    box-sizing: border-box;
+    background: #F5F4F0;
+    display:block;
+    height: 100%;
+    max-width: 640px;
+    margin:0 auto;
+    padding: 0;
+    a {
+        text-decoration: none;
+      }
+  }
 
-body{
-  background-color:#fafafa;
-  min-height:100vh;
-  padding: 1rem;
-  margin-top:0;
-  font-family:Verdana;
-}
+  body{
+    background: lightgrey;
+    height:300vh;
+    padding: 1rem;
+    margin-top:0;
+    font-family:Verdana;
+  }
 `;

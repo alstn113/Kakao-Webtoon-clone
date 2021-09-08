@@ -1,9 +1,9 @@
-import { useQuery } from "react-query";
-import { IPerson } from "@/shared/types";
-import { getPerson } from "@/api/person";
+import { useQuery } from 'react-query';
+import { IPerson } from '@/shared/types';
+import { getPerson } from '@/api/person';
 
 function PersonComponent() {
-  const { data, isLoading, isError, error } = useQuery<IPerson, Error>("person", getPerson);
+  const { data, isLoading, isError, error } = useQuery<IPerson, Error>('person', getPerson);
   if (isLoading) return <div>loading...</div>;
   if (isError) return <div>Error :( {error?.message}</div>;
   return (

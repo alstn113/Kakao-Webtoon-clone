@@ -1,15 +1,14 @@
-import type { AppProps } from "next/app";
-import { useState } from "react";
-import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { Hydrate } from "react-query/hydration";
+import type { AppProps } from 'next/app';
+import { useState } from 'react';
+import { QueryClientProvider, QueryClient } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { Hydrate } from 'react-query/hydration';
+import { RecoilRoot } from 'recoil';
+import { ThemeProvider } from 'styled-components';
 
-import { GlobalStyle } from "@/styles/global-style";
-import { ThemeProvider } from "styled-components";
-import { theme } from "@/styles/theme";
-import { RecoilRoot } from "recoil";
-
-import Header from "@/components/Header";
+import { GlobalStyle } from '@/styles/global-style';
+import { theme } from '@/styles/theme';
+import Header from '@/components/Layout/Header';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -21,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             staleTime: 10 * 1000,
           },
         },
-      })
+      }),
   );
   return (
     <RecoilRoot>

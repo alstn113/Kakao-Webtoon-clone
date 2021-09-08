@@ -1,4 +1,4 @@
-import { css, DefaultTheme } from "styled-components";
+import { css, DefaultTheme } from 'styled-components';
 
 const font = {
   small: css`
@@ -31,14 +31,14 @@ const shadow = css`
 
 export const theme: DefaultTheme = {
   color: {
-    light_grey1: "#eeeeee",
-    light_grey2: "#dddddd",
-    grey1: "#888888",
-    grey2: "#bbbbbb",
-    primary1: "#3be1b4",
-    primary2: "#89F4D8",
-    primary3: "#32BF9A",
-    red: "#f45452",
+    light_grey1: '#eeeeee',
+    light_grey2: '#dddddd',
+    grey1: '#888888',
+    grey2: '#bbbbbb',
+    primary1: '#3be1b4',
+    primary2: '#89F4D8',
+    primary3: '#32BF9A',
+    red: '#f45452',
   },
   font,
   flexCenter,

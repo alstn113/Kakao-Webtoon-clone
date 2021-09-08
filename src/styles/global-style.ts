@@ -1,26 +1,29 @@
-import { createGlobalStyle } from "styled-components";
-import { reset } from "styled-reset";
+import { createGlobalStyle } from 'styled-components';
+import { reset } from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  html{
+  body {
+    margin: 0 30px;
+    font-family: "Poppins";
+    background-color: #ffffff;
+    font-size: 1.2em;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
     box-sizing: border-box;
-    background: #F5F4F0;
-    display:block;
-    height: 100%;
-    max-width: 640px;
-    margin:0 auto;
-    padding: 0;
-    a {
-        text-decoration: none;
-      }
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
   }
 
-  body{
-    background: lightgrey;
-    height:300vh;
-    padding: 1rem;
-    margin-top:0;
-    font-family:Verdana;
+  a {
+    text-decoration: none;
+    color: #8e2ad6;
+    border-bottom: 1px dotted;
   }
 `;

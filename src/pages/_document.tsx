@@ -1,5 +1,5 @@
-import Document, { DocumentContext } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import Document, { DocumentContext } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -8,6 +8,7 @@ class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
+          // eslint-disable-next-line react/display-name
           enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         });
 

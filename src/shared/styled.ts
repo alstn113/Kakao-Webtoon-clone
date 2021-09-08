@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import { motion } from "framer-motion";
+import styled, { css } from 'styled-components';
 
 export const Button = styled.button`
   ${({ theme }) => theme.shadow}
@@ -8,26 +7,28 @@ export const Button = styled.button`
   height: 100px;
 `;
 
-export const Wrapper = styled.div`
-  width: 150px;
-  height: 150px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-`;
-
-export const Container = styled(motion.div)`
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: blue;
-  border-radius: 30px;
-`;
-
-export const Item = styled(motion.div)`
-  width: inherit;
-  height: inherit;
+export const ReviewCard = styled.div`
+  ${({ theme }) => theme.shadow}
   background: white;
-  transform-origin: 50% 100%;
+  margin: 60px auto;
+  padding: 1px 20px 20px 90px;
+  position: relative;
+  h2 {
+    margin-bottom: 0;
+  }
+  small {
+    margin-right: 10px;
+    color: #777;
+  }
+`;
+export const ReviewRating = styled.div`
+  ${({ theme }) => theme.flexCenter}
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background: #8e2ad6;
+  font-size: 3em;
+  width: 90px;
+  height: 90px;
+  color: white;
 `;

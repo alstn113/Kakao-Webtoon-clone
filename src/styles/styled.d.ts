@@ -1,7 +1,7 @@
-import "styled-components";
-import { css } from "styled-components";
+import 'styled-components';
+import { css } from 'styled-components';
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     color: {
       light_grey1: string;

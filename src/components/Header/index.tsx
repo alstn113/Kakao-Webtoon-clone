@@ -47,8 +47,8 @@ function HeaderComponent() {
       <TapMenu>
         <Slider {...settings}>
           {items.map(([id, path, pageName]) => (
-            <TapItem key={path}>
-              <p className={router.asPath === path ? 'active' : ''}>{pageName}</p>
+            <TapItem key={id}>
+              <p className={router.pathname === path ? 'active' : ''}>{pageName}</p>
             </TapItem>
           ))}
         </Slider>

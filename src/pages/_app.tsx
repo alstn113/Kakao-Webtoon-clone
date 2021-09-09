@@ -5,12 +5,16 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { Hydrate } from 'react-query/hydration';
 import { RecoilRoot } from 'recoil';
 import { ThemeProvider } from 'styled-components';
+import { useRouter } from 'next/router';
 
 import { GlobalStyle } from '@/styles/global-style';
 import { theme } from '@/styles/theme';
 import HeaderComponent from '@/components/Header';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const { pathname } = router;
+
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -22,6 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
       }),
   );
+  const HideHeader = ['/notification', '/search', '/more', '/404'];
+
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
@@ -29,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ReactQueryDevtools initialIsOpen={false} />
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <HeaderComponent />
+            {HideHeader.includes(pathname) ? null : <HeaderComponent />}
             <Component {...pageProps} />
           </ThemeProvider>
         </Hydrate>

@@ -2,15 +2,15 @@ import { css, DefaultTheme } from 'styled-components';
 
 const font = {
   small: css`
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: 400;
   `,
   medium: css`
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 500;
   `,
   large: css`
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
   `,
   xlarge: css`
@@ -31,14 +31,16 @@ const shadow = css`
 
 export const theme: DefaultTheme = {
   color: {
-    light_grey1: '#eeeeee',
+    white: '#ffffff',
+    background: '#000000',
+    light_grey1: '#868e96',
     light_grey2: '#dddddd',
-    grey1: '#888888',
-    grey2: '#bbbbbb',
-    primary1: '#3be1b4',
-    primary2: '#89F4D8',
-    primary3: '#32BF9A',
-    red: '#f45452',
+    light_violet0: '#f3f0ff',
+    light_violet1: '#d0bfff',
+    light_violet2: '#9775fa',
+    dark_violet0: '#845ef7',
+    dark_violet1: '#7048e8',
+    dark_violet2: '#5f3dc4',
   },
   font,
   flexCenter,

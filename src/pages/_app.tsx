@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle } from '@/styles/global-style';
 import { theme } from '@/styles/theme';
-import Header from '@/components/Layout/Header';
+import HeaderComponent from '@/components/Header';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ReactQueryDevtools initialIsOpen={false} />
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <Header />
+            <HeaderComponent />
             <Component {...pageProps} />
           </ThemeProvider>
         </Hydrate>

@@ -17,17 +17,28 @@ function HeaderComponent() {
     [5, '/my-page', '보관함'],
   ];
 
+  const location = () => {
+    for (const item of items) {
+      if (item[1] === router.pathname) {
+        return item[0];
+      }
+    }
+    return 0;
+  };
+  const present = location();
+
   const settings = {
     focusOnSelect: true,
     centerMode: true,
     infinite: true,
-    //initialSlide: location,
+    initialSlide: present,
     slidesToShow: 5,
     swipeToSlide: true,
     arrows: false,
     speed: 400,
     afterChange: (currentSlide: number) => router.push(items[currentSlide][1]),
   };
+
   return (
     <>
       <TopHeader>

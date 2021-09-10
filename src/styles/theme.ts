@@ -3,7 +3,7 @@ import { css, DefaultTheme } from 'styled-components';
 const font = {
   small: css`
     font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 300;
   `,
   medium: css`
     font-size: 1rem;

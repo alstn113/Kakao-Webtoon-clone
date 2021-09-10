@@ -11,6 +11,7 @@ import { GlobalStyle } from '@/styles/global-style';
 import { theme } from '@/styles/theme';
 import HeaderComponent from '@/components/Header';
 import NoHeaderComponent from '@/components/NoHeader';
+import FooterComponent from '@/components/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -27,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
       }),
   );
-  const HideHeader = ['/notification', '/search', '/more', '/404'];
+  const HidePage = ['/notification', '/search', '/more', '/404'];
 
   return (
     <RecoilRoot>
@@ -36,8 +37,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ReactQueryDevtools initialIsOpen={false} />
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            {HideHeader.includes(pathname) ? <NoHeaderComponent /> : <HeaderComponent />}
+            {HidePage.includes(pathname) ? <NoHeaderComponent /> : <HeaderComponent />}
             <Component {...pageProps} />
+            {HidePage.includes(pathname) ? null : <FooterComponent />}
           </ThemeProvider>
         </Hydrate>
       </QueryClientProvider>

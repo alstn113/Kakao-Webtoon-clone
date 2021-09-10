@@ -28,7 +28,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
       }),
   );
-  const HidePage = ['/notification', '/search', '/more', '/404'];
+
+  function HidePage(): boolean {
+    const Hide = ['/notification', '/search', '/more', '/404'];
+    for (const link of Hide) {
+      if (pathname.startsWith(link)) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   return (
     <RecoilRoot>
@@ -37,9 +46,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ReactQueryDevtools initialIsOpen={false} />
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            {HidePage.includes(pathname) ? <NoHeaderComponent /> : <HeaderComponent />}
+            {HidePage() ? <HeaderComponent /> : <NoHeaderComponent />}
             <Component {...pageProps} />
-            {HidePage.includes(pathname) ? null : <FooterComponent />}
+            {HidePage() ? <FooterComponent /> : null}
           </ThemeProvider>
         </Hydrate>
       </QueryClientProvider>

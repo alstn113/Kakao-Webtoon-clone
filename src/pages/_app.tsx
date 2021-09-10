@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { GlobalStyle } from '@/styles/global-style';
 import { theme } from '@/styles/theme';
 import HeaderComponent from '@/components/Header';
+import NoHeaderComponent from '@/components/NoHeader';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -35,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ReactQueryDevtools initialIsOpen={false} />
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            {HideHeader.includes(pathname) ? null : <HeaderComponent />}
+            {HideHeader.includes(pathname) ? <NoHeaderComponent /> : <HeaderComponent />}
             <Component {...pageProps} />
           </ThemeProvider>
         </Hydrate>

@@ -5,13 +5,13 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
     background: ${({ theme }) => theme.color.background};
+    color: ${({ theme }) => theme.color.white};
     ${({ theme }) => theme.font.medium}
     height: 100%;
-    color: ${({ theme }) => theme.color.white};
+
     a {
       text-decoration: none;
       color: inherit
     }
   }
-
 `;

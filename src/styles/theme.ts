@@ -7,7 +7,7 @@ const font = {
   `,
   medium: css`
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
   `,
   large: css`
     font-size: 1.5rem;

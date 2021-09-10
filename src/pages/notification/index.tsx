@@ -1,5 +1,9 @@
 function NotificationPage() {
-  return <div>NotificationPage</div>;
+  return (
+    <>
+      <div>NotificationPage</div>
+    </>
+  );
 }
 
 export default NotificationPage;

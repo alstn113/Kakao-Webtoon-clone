@@ -21,11 +21,11 @@ function FooterComponent() {
                   <p>{name}</p>
                 </a>
               </Link>
-              {id !== links.slice(-1)[0][0] && <div>&nbsp;|&nbsp;</div>}
+              {id !== links.slice(-1)[0][0] && <div className="space">|</div>}
             </div>
           ))}
         </FooterItems>
-        <p>&copy; KAKAO WEPTOON</p>
+        <p className="copyright">&copy; KAKAO WEPTOON</p>
       </FooterWrapper>
     </div>
   );
@@ -40,6 +40,10 @@ const FooterWrapper = styled.div`
   padding: 50px 0px;
   flex-direction: column;
   ${({ theme }) => theme.font.small};
+
+  .copyright {
+    padding-top: 10px;
+  }
 `;
 
 const FooterItems = styled.div`
@@ -50,5 +54,10 @@ const FooterItems = styled.div`
   .item {
     display: flex;
     flex-direction: row;
+  }
+
+  .space {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 `;

@@ -35,7 +35,7 @@ function HeaderComponent() {
     slidesToShow: 5,
     swipeToSlide: true,
     arrows: false,
-    speed: 400,
+    speed: 200,
     afterChange: (currentSlide: number) => router.push(items[currentSlide][1]),
   };
 
@@ -68,6 +68,12 @@ function HeaderComponent() {
             </Slider>
           )}
         </TapMenu>
+        <TapListWrapper>
+          <ul>
+            <li>가나다</li>
+            <li>가나다</li>
+          </ul>
+        </TapListWrapper>
       </TopHeader>
       <Container>
         <div>가나다</div>
@@ -80,7 +86,7 @@ const TopHeader = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 `;
 
 const Header = styled.div`
@@ -107,12 +113,24 @@ const TapItem = styled.div`
   ${({ theme }) => theme.font.medium};
   color: ${({ theme }) => theme.color.light_grey1};
   cursor: pointer;
+  height: 40px;
 
-  p {
-    display: inline;
-  }
   .active {
     color: ${({ theme }) => theme.color.white};
+  }
+`;
+
+const TapListWrapper = styled.div`
+  ul {
+    ${({ theme }) => theme.flexCenter};
+    li {
+      display: block;
+      border-radius: 30px;
+      background-color: white;
+      color: black;
+      margin: 10px;
+      padding: 10px;
+    }
   }
 `;
 
@@ -120,7 +138,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 150px;
+  padding-top: 250px;
   margin: 0 auto;
   height: 1000px;
   background-color: black;
